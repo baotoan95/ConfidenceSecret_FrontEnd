@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { HttpModule } from '@angular/http';
+import { PostService } from './components/post/services/post.service';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/components/header.component';
 import { SidebarComponent } from './components/sidebar/components/sidebar.component';
@@ -57,9 +60,12 @@ const appRoutes: Routes = [
     RouterModule,
     RouterModule.forRoot(appRoutes, {
       //enableTracing: true // Debug only
-    })
+    }),
+    HttpModule
   ],
-  providers: [],
+  providers: [
+    PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
