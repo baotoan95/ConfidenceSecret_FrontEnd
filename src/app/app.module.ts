@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { UserModule } from './main/user/modules/user.module';
 import { PostModule } from './main/post/modules/post.module';
 import { NotificationModule } from './main/notification/modules/notification.module';
+import { CommentModule } from './main/comment/modules/comment.module';
+import { ContactModule } from './main/contact/modules/contact.module';
 
 import { PostService } from './main/post/services/post.service';
 
@@ -14,10 +16,6 @@ import { HeaderComponent } from './main/common/header/components/header.componen
 import { SidebarComponent } from './main/common/sidebar/components/sidebar.component';
 import { ActionbarComponent } from './main/common/actionbar/components/actionbar.component';
 import { DashBoardComponent } from './main/dashboard/components/dashboard.component';
-import { CommentComponent } from './main/comment/components/comment.component';
-import { CommentManagementComponent } from './main/comment/components/comments.component';
-import { ContactComponent } from './main/contact/components/contact.component';
-import { ContactManagementComponent } from './main/contact/components/contacts.component';
 
 
 const appRoutes: Routes = [
@@ -25,11 +23,9 @@ const appRoutes: Routes = [
   { path: 'dashboard', component: DashBoardComponent },
   { path: 'user-management', loadChildren: './main/user/modules/user.module#UserModule' },
   { path: 'post-management', loadChildren: './main/post/modules/post.module#PostModule' },
-  { path: 'contact', component: ContactComponent },
-  { path: 'contact-management', component: ContactManagementComponent },
   { path: 'notification-management', loadChildren: './main/notification/modules/notification.module#NotificationModule' },
-  { path: 'comment', component: CommentComponent },
-  { path: 'comment-management', component: CommentManagementComponent }
+  { path: 'comment-management', loadChildren: './main/comment/modules/comment.module#CommentModule' },
+  { path: 'contact-management', loadChildren: './main/contact/modules/contact.module#ContactModule' }
 ]
 
 @NgModule({
@@ -39,10 +35,6 @@ const appRoutes: Routes = [
     SidebarComponent,
     ActionbarComponent,
     DashBoardComponent,
-    ContactComponent,
-    ContactManagementComponent,
-    CommentComponent,
-    CommentManagementComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +45,9 @@ const appRoutes: Routes = [
     HttpModule,
     UserModule,
     PostModule,
-    NotificationModule
+    NotificationModule,
+    CommentModule,
+    ContactModule
   ],
   providers: [
     PostService
