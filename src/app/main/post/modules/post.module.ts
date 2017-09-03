@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { PostManagementComponent } from '../components/posts.component';
 import { PostComponent } from '../components/post.component';
 
+import { PostService } from '../services/post.service';
+
 const postModuleRouting: Routes = [
     { path: '', component: PostManagementComponent },
     { path: 'post', component: PostComponent }
@@ -22,7 +24,10 @@ const PostRouting: ModuleWithProviders = RouterModule.forChild(postModuleRouting
         CommonModule,
         PostRouting
     ],
-    exports: []
+    exports: [],
+    providers: [
+        PostService
+    ]
 })
 export class PostModule {
 

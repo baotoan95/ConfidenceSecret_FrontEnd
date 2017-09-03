@@ -9,8 +9,6 @@ import { NotificationModule } from './main/notification/modules/notification.mod
 import { CommentModule } from './main/comment/modules/comment.module';
 import { ContactModule } from './main/contact/modules/contact.module';
 
-import { PostService } from './main/post/services/post.service';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './main/common/header/components/header.component';
 import { SidebarComponent } from './main/common/sidebar/components/sidebar.component';
@@ -50,7 +48,7 @@ const appRoutes: Routes = [
     ContactModule
   ],
   providers: [
-    PostService
+    
   ],
   bootstrap: [AppComponent]
 })
