@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { UserModule } from './main/user/modules/user.module';
 import { PostModule } from './main/post/modules/post.module';
+import { NotificationModule } from './main/notification/modules/notification.module';
 
 import { PostService } from './main/post/services/post.service';
 
@@ -13,8 +14,6 @@ import { HeaderComponent } from './main/common/header/components/header.componen
 import { SidebarComponent } from './main/common/sidebar/components/sidebar.component';
 import { ActionbarComponent } from './main/common/actionbar/components/actionbar.component';
 import { DashBoardComponent } from './main/dashboard/components/dashboard.component';
-import { NotificationComponent } from './main/notification/components/notification.component';
-import { NotificationManagementComponent } from './main/notification/components/notifications.component';
 import { CommentComponent } from './main/comment/components/comment.component';
 import { CommentManagementComponent } from './main/comment/components/comments.component';
 import { ContactComponent } from './main/contact/components/contact.component';
@@ -28,8 +27,7 @@ const appRoutes: Routes = [
   { path: 'post-management', loadChildren: './main/post/modules/post.module#PostModule' },
   { path: 'contact', component: ContactComponent },
   { path: 'contact-management', component: ContactManagementComponent },
-  { path: 'notification', component: NotificationComponent },
-  { path: 'notification-management', component: NotificationManagementComponent },
+  { path: 'notification-management', loadChildren: './main/notification/modules/notification.module#NotificationModule' },
   { path: 'comment', component: CommentComponent },
   { path: 'comment-management', component: CommentManagementComponent }
 ]
@@ -43,8 +41,6 @@ const appRoutes: Routes = [
     DashBoardComponent,
     ContactComponent,
     ContactManagementComponent,
-    NotificationComponent,
-    NotificationManagementComponent,
     CommentComponent,
     CommentManagementComponent
   ],
@@ -56,7 +52,8 @@ const appRoutes: Routes = [
     }),
     HttpModule,
     UserModule,
-    PostModule
+    PostModule,
+    NotificationModule
   ],
   providers: [
     PostService
