@@ -1,32 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { HttpModule } from '@angular/http';
-import { PostService } from './components/post/services/post.service';
+
+import { UserModule } from './main/user/modules/user.module';
+
+import { PostService } from './main/post/services/post.service';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/components/header.component';
-import { SidebarComponent } from './components/sidebar/components/sidebar.component';
-import { ActionbarComponent } from './components/actionbar/components/actionbar.component';
-import { DashBoardComponent } from './components/dashboard/components/dashboard.component';
-import { UserComponent } from './components/user/components/user.component';
-import { UserManagementComponent } from './components/user/components/users.component';
-import { PostComponent } from './components/post/components/post.component';
-import { PostManagementComponent } from './components/post/components/posts.component';
-import { NotificationComponent } from './components/notification/components/notification.component';
-import { NotificationManagementComponent } from './components/notification/components/notifications.component';
-import { CommentComponent } from './components/comment/components/comment.component';
-import { CommentManagementComponent } from './components/comment/components/comments.component';
-import { ContactComponent } from './components/contact/components/contact.component';
-import { ContactManagementComponent } from './components/contact/components/contacts.component';
+import { HeaderComponent } from './main/header/components/header.component';
+import { SidebarComponent } from './main/sidebar/components/sidebar.component';
+import { ActionbarComponent } from './main/actionbar/components/actionbar.component';
+import { DashBoardComponent } from './main/dashboard/components/dashboard.component';
+// import { UserComponent } from './main/user/components/user.component';
+// import { UserManagementComponent } from './main/user/components/users.component';
+import { PostComponent } from './main/post/components/post.component';
+import { PostManagementComponent } from './main/post/components/posts.component';
+import { NotificationComponent } from './main/notification/components/notification.component';
+import { NotificationManagementComponent } from './main/notification/components/notifications.component';
+import { CommentComponent } from './main/comment/components/comment.component';
+import { CommentManagementComponent } from './main/comment/components/comments.component';
+import { ContactComponent } from './main/contact/components/contact.component';
+import { ContactManagementComponent } from './main/contact/components/contacts.component';
 
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashBoardComponent },
-  { path: 'user', component: UserComponent },
-  { path: 'user-management', component: UserManagementComponent },
+  { path: 'user-management', loadChildren: 'app/components/user/modules/user.module#UserModule' },
   { path: 'post', component: PostComponent },
   { path: 'post-management', component: PostManagementComponent },
   { path: 'contact', component: ContactComponent },
@@ -44,8 +45,6 @@ const appRoutes: Routes = [
     SidebarComponent,
     ActionbarComponent,
     DashBoardComponent,
-    UserComponent,
-    UserManagementComponent,
     PostComponent,
     PostManagementComponent,
     ContactComponent,
@@ -61,7 +60,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, {
       //enableTracing: true // Debug only
     }),
-    HttpModule
+    HttpModule,
+    UserModule
   ],
   providers: [
     PostService
