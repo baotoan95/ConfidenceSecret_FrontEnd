@@ -23,67 +23,12 @@
         </form>
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
-        <ul class="sidebar-menu tree" data-widget="tree">
+        <div class="sidebar-menu tree" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="active">
-                <a routerLink="" routerLinkActive="active">
-                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-pie-chart"></i>
-                    <span>User management</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a routerLink="user-management" routerLinkActive="active"><i class="fa fa-circle-o"></i> All</a></li>
-                    <li><a routerLink="user-management/user" routerLinkActive="active"><i class="fa fa-circle-o"></i> Add new</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-laptop"></i>
-                    <span>Post management</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a routerLink="post-management" routerLinkActive="active"><i class="fa fa-circle-o"></i> All</a></li>
-                    <li><a routerLink="post-management/post" routerLinkActive="active"><i class="fa fa-circle-o"></i> Add new</a></li>
-                    <li><a routerLink="post-management" routerLinkActive="active"><i class="fa fa-circle-o"></i> Top view</a></li>
-                    <li><a routerLink="post-management" routerLinkActive="active"><i class="fa fa-circle-o"></i> Top like</a></li>
-                </ul>
-            </li>
-            <li>
-                <a routerLink="contact-management" routerLinkActive="active">
-                    <i class="fa fa-table"></i> <span>Contact</span>
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-table"></i> <span>Notification</span>
-                    <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a routerLink="notification-management" routerLinkActive="active"><i class="fa fa-circle-o"></i> All</a></li>
-                    <li><a routerLink="notification-management/notification" routerLinkActive="active"><i class="fa fa-circle-o"></i> Add new</a></li>
-                </ul>
-            </li>
-            <li>
-                <a routerLink="comment-management" routerLinkActive="active">
-                    <i class="fa fa-calendar"></i> <span>Comment management</span>
-                    <span class="pull-right-container">
-                    <small class="label pull-right bg-blue">17</small>
-                    </span>
-                </a>
-            </li>
-        </ul>
+            <p-panelMenu [model]="items" [style]="{'width':'100%'}"></p-panelMenu>
+        </div>
+        
     </section>
     <!-- /.sidebar -->
+    
 </aside>

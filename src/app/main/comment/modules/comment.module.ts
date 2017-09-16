@@ -2,25 +2,42 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 
+import { CSCommonModule } from '../../common/cs.common.module';
+
+import { CommentLandingComponent } from '../components/comment.landing.component';
 import { CommentComponent } from '../components/comment.component';
 import { CommentManagementComponent } from '../components/comments.component';
+import { HeaderComponent } from '../../common/header/components/header.component';
+import { SidebarComponent } from '../../common/sidebar/components/sidebar.component';
+import { ActionbarComponent } from '../../common/actionbar/components/actionbar.component';
 
 const commentModuleRouting: Routes = [
-    { path: 'comment', component: CommentComponent },
-    { path: '', component: CommentManagementComponent }
+    { path: '', component: CommentLandingComponent, 
+        children: [
+            { path: '', component: HeaderComponent, outlet: 'headerView' },
+            { path: '', component: SidebarComponent, outlet: 'sidebarView' },
+            { path: '', component: ActionbarComponent, outlet: 'actionbarView' },
+            { path: '', component: CommentManagementComponent, outlet: 'contentView' },
+            { path: 'comment', component: CommentLandingComponent, outlet: 'contentView' }
+        ]
+    }
 ];
 
 const CommentRouting: ModuleWithProviders = RouterModule.forChild(commentModuleRouting);
 
 @NgModule({
     declarations: [
+        CommentLandingComponent,
         CommentComponent,
         CommentManagementComponent
     ],
     imports: [
         CommonModule,
-        CommentRouting
+        CommentRouting,
+        CSCommonModule,
+        BootstrapModalModule.forRoot({container:document.body})
     ],
     exports: [
 
