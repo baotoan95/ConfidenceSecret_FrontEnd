@@ -16,11 +16,8 @@ import { ActionbarComponent } from '../../common/actionbar/components/actionbar.
 const commentModuleRouting: Routes = [
     { path: '', component: CommentLandingComponent, 
         children: [
-            { path: '', component: HeaderComponent, outlet: 'headerView' },
-            { path: '', component: SidebarComponent, outlet: 'sidebarView' },
-            { path: '', component: ActionbarComponent, outlet: 'actionbarView' },
-            { path: '', component: CommentManagementComponent, outlet: 'contentView' },
-            { path: 'comment', component: CommentLandingComponent, outlet: 'contentView' }
+            { path: '', component: CommentManagementComponent },
+            { path: 'comment', component: CommentLandingComponent }
         ]
     }
 ];

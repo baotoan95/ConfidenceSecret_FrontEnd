@@ -14,7 +14,7 @@ import { ActionbarComponent } from '../../common/actionbar/components/actionbar.
             {
                 path: '', component: UserLandingComponent,
                 children: [
-                    { path: '', component: UserManagementComponent },
+                    { path: '', component: UserManagementComponent, pathMatch: 'full' },
                     { path: 'user', component: UserComponent }
                 ]
             }

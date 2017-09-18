@@ -4,7 +4,7 @@ import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 
-import { CSCommonModule } from './main/common/cs.common.module';
+import { CSCommonModule } from './main/admin/components/common/cs.common.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';

@@ -13,13 +13,10 @@ import { ActionbarComponent } from '../../common/actionbar/components/actionbar.
 import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 
 const contactModuleRouting: Routes = [
-    { path: '', component: ContactLandingComponent, 
+    { path: '', component: ContactLandingComponent, pathMatch: 'full',
         children: [
-            { path: '', component: HeaderComponent, outlet: 'headerView' },
-            { path: '', component: SidebarComponent, outlet: 'sidebarView' },
-            { path: '', component: ActionbarComponent, outlet: 'actionbarView' },
-            { path: '', component: ContactManagementComponent, outlet: 'contentView' },
-            { path: 'contact', component: ContactLandingComponent, outlet: 'contentView' }
+            { path: '', component: ContactManagementComponent, pathMatch: 'full' },
+            { path: 'contact', component: ContactComponent }
         ]
     }
 ];

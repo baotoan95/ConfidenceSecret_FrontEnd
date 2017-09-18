@@ -15,11 +15,8 @@ import { ActionbarComponent } from '../../common/actionbar/components/actionbar.
 const notificationModuleRouting: Routes = [
     { path: '', component: NotificationLandingComponent, 
         children: [
-            { path: '', component: HeaderComponent, outlet: 'headerView' },
-            { path: '', component: SidebarComponent, outlet: 'sidebarView' },
-            { path: '', component: ActionbarComponent, outlet: 'actionbarView' },
-            { path: '', component: NotificationManagementComponent, outlet: 'contentView' },
-            { path: 'notification', component: NotificationLandingComponent, outlet: 'contentView' }
+            { path: '', component: NotificationManagementComponent },
+            { path: 'notification', component: NotificationLandingComponent }
         ]
     }
 ]

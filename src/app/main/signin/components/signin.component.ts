@@ -9,6 +9,7 @@ export class SigninComponent {
     constructor(private router: Router) { }
 
     public login() {
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['admin']);
+        return false;
     }
 }

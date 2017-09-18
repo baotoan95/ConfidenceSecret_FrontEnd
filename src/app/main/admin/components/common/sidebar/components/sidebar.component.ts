@@ -22,23 +22,23 @@ export class SidebarComponent implements OnInit {
                 label: 'User management',
                 icon: 'fa-file-o',
                 items: [
-                    { label: 'All', icon: 'fa-plus', routerLink: ['/user-management'] },
-                    { label: 'Add new', icon: 'fa-plus', routerLink: ['/user-management/user'] }
+                    { label: 'All', icon: 'fa-plus', routerLink: ['/admin/user-management'] },
+                    { label: 'Add new', icon: 'fa-plus', routerLink: ['/admin/user-management/user'] }
                 ]
             },
             {
                 label: 'Post management',
                 icon: 'fa-edit',
                 items: [
-                    { label: 'All', icon: 'fa-mail-forward', routerLink: ['/post-management'] },
-                    { label: 'Add new', icon: 'fa-mail-reply', routerLink: ['/post-management/post'] }
+                    { label: 'All', icon: 'fa-mail-forward', routerLink: ['/admin/post-management'] },
+                    { label: 'Add new', icon: 'fa-mail-reply', routerLink: ['/admin/post-management/post'] }
                 ]
             },
             {
                 label: 'Commnent management',
                 icon: 'fa-gear',
                 items: [
-                    { label: 'All', icon: 'fa-refresh', routerLink: ['/comment-management'] },
+                    { label: 'All', icon: 'fa-refresh', routerLink: ['/admin/comment-management'] },
                     // { label: 'All', icon: 'fa-refresh', routerLink: ['/comment-management/comment'] }
                 ]
             },
@@ -46,7 +46,7 @@ export class SidebarComponent implements OnInit {
                 label: 'Contact management',
                 icon: 'fa-question',
                 items: [
-                    { label: 'All', icon: 'fa-mail-forward', routerLink: ['/contact-management'] },
+                    { label: 'All', icon: 'fa-mail-forward', routerLink: ['/admin/contact-management'] },
                     // { label: 'Add new', icon: 'fa-mail-reply', routerLink: ['/user-management/contact'] }
                 ]
             },
@@ -54,7 +54,7 @@ export class SidebarComponent implements OnInit {
                 label: 'Notification',
                 icon: 'fa-question',
                 items: [
-                    { label: 'All', icon: 'fa-mail-forward', routerLink: ['/notification-management'] },
+                    { label: 'All', icon: 'fa-mail-forward', routerLink: ['/admin/notification-management'] },
                     // { label: 'Add new', icon: 'fa-mail-reply', routerLink: ['/notification-management/notification'] }
                 ]
             }
